@@ -1,10 +1,36 @@
 server:
   port: 2222
 
+#eureka:
+#  client:
+#    service-url: http://localhost:1111/eureka/
+#    serviceUrl:
+#          defaultZone: http://localhost:1111/eureka/
+#    server:
+#      enableSelfPreservation: false
+
+#  instance:
+#    statusPageUrlPath: http://localhost:2222/info
+#    healthCheckUrlPath: ${management.context-path}/health
+#    status-page-url-path: ${management.context-path}/info
+#    health-check-url-path: ${management.context-path}/health
+
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-          defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://localhost:1111/eureka/
+#    healthcheck:
+#      enabled: true
+#    lease:
+#      duration: 5
+
+logging:
+  level:
+    org.exampledriven.eureka: DEBUG
+
 spring:
   application:
     name: service-cloud
