@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ComputeController {
 
+    @RequestMapping("/")
+    public String home() {
+        return "Hello world";
+    }
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
         Integer r = a + b;
