@@ -1,22 +1,22 @@
 package com.sqshine.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.log4j.Logger;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ComputeController {
 
-    @RequestMapping("/")
+    private final Logger logger = Logger.getLogger(getClass());
+
+    @GetMapping("/")
     public String home() {
         return "Hello world";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    @GetMapping(value = "/add")
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
-        Integer r = a + b;
-        return r;
+        logger.info("服务被调用");
+        return a + b;
     }
 
 }

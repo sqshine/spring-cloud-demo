@@ -20,6 +20,8 @@
 
 	<modules>
 		<module>registry-center-cloud</module>
+		<module>service-cloud</module>
+		<module>client-consumer</module>
 	</modules>
 
 	<properties>
