@@ -1,0 +1,14 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sqshine/spring-cloud-demo
+          search-paths: config-repo
+          # \u7528\u6237\u540D\u548C\u5BC6\u7801\u9700\u8981\u586B\u5165\u624D\u80FD\u4F7F\u7528
+#          username:
+#          password:
