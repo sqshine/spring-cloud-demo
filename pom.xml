@@ -23,6 +23,7 @@
 		<module>service-cloud</module>
 		<module>client-consumer</module>
 		<module>config-server</module>
+		<module>config-client</module>
 	</modules>
 
 	<properties>
