@@ -1,30 +1,38 @@
 package com.sqshine.controller;
 
 import com.sqshine.ComputeClient;
+import com.sqshine.service.ComputeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class ConsumerController {
 
-    private final String SERVICE_URL = "http://service-cloud";
-
     @Autowired
-    private RestTemplate restTemplate;
+    private ComputeService computeService;
 
     @Autowired
     private ComputeClient computeClient;
 
+    /**
+     * 使用断路器保护
+     *
+     * @return 计算结果
+     */
     @GetMapping("/add")
-    public String add() {
-        return restTemplate.getForEntity(SERVICE_URL + "/add?a=10&b=20", String.class).getBody();
+    public Integer add() {
+        return computeService.addService();
     }
 
+    /**
+     * 未使用断路器
+     *
+     * @return 计算结果
+     */
     @GetMapping("/add2")
     public String add2() {
-        return restTemplate.getForEntity(SERVICE_URL + "/add?a=30&b=30", String.class).getBody();
+        return computeService.addService2();
     }
 
     @GetMapping("/add1")
