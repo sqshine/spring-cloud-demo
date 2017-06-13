@@ -23,6 +23,8 @@
 		<module>client-consumer</module>
 		<module>config-server</module>
 		<module>config-client</module>
+		<module>user-provider</module>
+		<module>movie-consumer</module>
 	</modules>
 
 	<properties>

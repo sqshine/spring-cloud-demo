@@ -1,11 +1,11 @@
 server:
-  port: 2222
+  port: 2221
 
 #eureka:
 #  client:
 #    service-url: http://localhost:1111/eureka/
 #    serviceUrl:
-#          defaultZone: http://localhost:1111/eureka/
+#      defaultZone: http://localhost:1111/eureka/
 #    server:
 #      enableSelfPreservation: false
 
@@ -20,11 +20,11 @@ eureka:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
     metadataMap:
-          instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://localhost:8761/eureka/
     registry-fetch-interval-seconds: 5
 
 logging:
