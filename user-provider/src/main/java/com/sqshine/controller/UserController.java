@@ -12,6 +12,7 @@ public class UserController {
 
     @GetMapping("/user/{id}")
     public User findById(@PathVariable Long id) {
+        System.out.println("被调用了");
         for (User user : getUsers()) {
             if (user.getId().equals(id)) {
                 return user;

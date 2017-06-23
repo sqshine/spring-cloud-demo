@@ -16,6 +16,7 @@ public class MovieConsumerApplication {
     }
 
     @Bean
+    @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
