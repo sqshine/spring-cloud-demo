@@ -3,6 +3,9 @@ package com.sqshine;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * @author sqshine
+ */
 @Component
 public class ComputeClientHystrix implements ComputeClient {
     @Override
