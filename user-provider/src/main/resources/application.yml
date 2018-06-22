@@ -2,8 +2,10 @@ server:
   port: 1112
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 info:
   name: user provider
