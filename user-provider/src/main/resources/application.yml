@@ -13,8 +13,21 @@ info:
 spring:
   application:
     name: user-provider
+  boot:
+    admin:
+      client:
+        enabled: true
+        url: http://localhost:8761/eureka/
+        instance:
+          service-url: http://localhost:8761/eureka/
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+
+
+#spring.boot.admin.client.enabled = true
+#spring.boot.admin.url=http://192.168.3.126:8888/
+#management.security.enabled= false
