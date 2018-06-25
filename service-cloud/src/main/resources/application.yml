@@ -3,14 +3,14 @@ server:
 
 #eureka:
 #  client:
-#    service-url: http://localhost:1111/eureka/
+#    service-url: http://localhost:8761/eureka/
 #    serviceUrl:
-#      defaultZone: http://localhost:1111/eureka/
+#      defaultZone: http://localhost:8761/eureka/
 #    server:
 #      enableSelfPreservation: false
 
 #  instance:
-#    statusPageUrlPath: http://localhost:2222/info
+#    statusPageUrlPath: http://localhost:8761/info
 #    healthCheckUrlPath: ${management.context-path}/health
 #    status-page-url-path: ${management.context-path}/info
 #    health-check-url-path: ${management.context-path}/health
