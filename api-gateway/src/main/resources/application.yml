@@ -8,6 +8,6 @@ spring:
     gateway:
       routes:
       - id: baidu_route
-        uri: http://www.baidu.com
+        uri: http://www.baidu.com:80/
         predicates:
         - Path=/hello
