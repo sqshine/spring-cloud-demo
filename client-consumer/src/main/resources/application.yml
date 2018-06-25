@@ -12,6 +12,11 @@ spring:
   application:
     name: client-consumer
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 custom:
   rest:
