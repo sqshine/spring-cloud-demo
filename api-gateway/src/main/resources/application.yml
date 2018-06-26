@@ -1,13 +1,51 @@
 server:
   port: 8082
+  http2:
+    enabled: true
 
 spring:
   application:
     name: api-gateway
   cloud:
     gateway:
+      default-filters:
+#      - AddResponseHeader=X-Response-Default-Name, Default-Value
+#      - AddRequestHeader=X-Request-Name, Value
+#      - AddRequestParameter=name, value
+
       routes:
+      #------------------------------------------------------------------------
+#      - id: i5xforyou-biz-auth
+#        uri: lb://i5xforyou-biz-auth
+#        predicates:
+#        - Path= ${server.servlet.context-path}/auth/**
+#        filters:
+#        - StripPrefix= 1
+      #------------------------------------------------------------------------
+#      - id: i5xforyou-biz-kanjia-websocket
+#        uri: lb:ws://i5xforyou-biz-kanjia-websocket
+#        predicates:
+#        - Path= ${server.servlet.context-path}/kanjia-websocket/**
+#        filters:
+#        - StripPrefix= 1
       - id: baidu_route
-        uri: http://www.baidu.com:80/
+        uri: https://www.baidu.com/
         predicates:
-        - Path=/hello
+        - Path=/hellos
+      - id: after_route
+        uri: http://www.163.com/
+        predicates:
+        - After=2018-06-26T09:06:08.142+08:00[Asia/Shanghai]
+
+
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    status-page-url-path: /actuator/info
+#    health-check-url-path: /actuator/health
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: false
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
