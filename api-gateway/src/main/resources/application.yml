@@ -2,6 +2,9 @@ server:
   port: 8082
   http2:
     enabled: true
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
 
 spring:
   application:
