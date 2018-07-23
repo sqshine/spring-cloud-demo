@@ -14,6 +14,8 @@ spring:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
+
       default-filters:
 #      - AddResponseHeader=X-Response-Default-Name, Default-Value
 #      - AddRequestHeader=X-Request-Name, Value
